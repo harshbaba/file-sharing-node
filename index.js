@@ -10,7 +10,7 @@ var server = http.createServer(function (req, res) {
   if (req.url == '/fileupload') {
     var form = new formidable.IncomingForm();
     //console.log(form);
-    form.options.maxFileSize = 5000 * 1024 * 1024;
+    form.options.maxFileSize = 10240 * 1024 * 1024;
     //console.log(form);
     form.parse(req, function (err, fields, files) {
       var oldpath = files.filetoupload.filepath;
